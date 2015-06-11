@@ -12,11 +12,14 @@ namespace ARM
 {
     public partial class AdminForm : Form
     {
+
+        string s = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
         MyDB m = new MyDB();
         
-        string s = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");//при пересоздании формы обнуляется
+        
         string f;//время завершения работы
         string input;
+     
         public AdminForm()
         {
             InitializeComponent();
@@ -26,7 +29,7 @@ namespace ARM
         {
             f = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
 
-            m.add_worksession(s, f);
+            m.add_worksession(s,f);
             
 
            LoginPage lp = new LoginPage();
