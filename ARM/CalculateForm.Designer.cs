@@ -41,6 +41,12 @@
             this.ll1 = new System.Windows.Forms.LinkLabel();
             this.res_lbl = new System.Windows.Forms.Label();
             this.save_btn = new System.Windows.Forms.Button();
+            this.okbTN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.name_zag = new System.Windows.Forms.TextBox();
+            this.mat_zag = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgw1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,16 +139,15 @@
             // 
             this.ll1.ActiveLinkColor = System.Drawing.Color.Blue;
             this.ll1.AutoSize = true;
-            this.ll1.Location = new System.Drawing.Point(416, 123);
+            this.ll1.Location = new System.Drawing.Point(364, 123);
             this.ll1.Name = "ll1";
             this.ll1.Size = new System.Drawing.Size(0, 13);
             this.ll1.TabIndex = 10;
-            this.ll1.TabStop = true;
             // 
             // res_lbl
             // 
             this.res_lbl.AutoSize = true;
-            this.res_lbl.Location = new System.Drawing.Point(303, 123);
+            this.res_lbl.Location = new System.Drawing.Point(218, 123);
             this.res_lbl.Name = "res_lbl";
             this.res_lbl.Size = new System.Drawing.Size(0, 13);
             this.res_lbl.TabIndex = 11;
@@ -157,12 +162,68 @@
             this.save_btn.UseVisualStyleBackColor = true;
             this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
+            // okbTN
+            // 
+            this.okbTN.Location = new System.Drawing.Point(421, 188);
+            this.okbTN.Name = "okbTN";
+            this.okbTN.Size = new System.Drawing.Size(51, 30);
+            this.okbTN.TabIndex = 13;
+            this.okbTN.Text = "Ok";
+            this.okbTN.UseVisualStyleBackColor = true;
+            this.okbTN.Click += new System.EventHandler(this.okbTN_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(390, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Для внесения изменрений в базу необходимо указать ещё пару моментов";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 178);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Наименования заготовки";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(189, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Материал заготовки";
+            // 
+            // name_zag
+            // 
+            this.name_zag.Location = new System.Drawing.Point(26, 194);
+            this.name_zag.Name = "name_zag";
+            this.name_zag.Size = new System.Drawing.Size(133, 20);
+            this.name_zag.TabIndex = 17;
+            // 
+            // mat_zag
+            // 
+            this.mat_zag.Location = new System.Drawing.Point(192, 194);
+            this.mat_zag.Name = "mat_zag";
+            this.mat_zag.Size = new System.Drawing.Size(109, 20);
+            this.mat_zag.TabIndex = 18;
+            // 
             // CalculateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 149);
-            this.Controls.Add(this.dgw1);
+            this.ClientSize = new System.Drawing.Size(484, 140);
+            this.Controls.Add(this.mat_zag);
+            this.Controls.Add(this.name_zag);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.okbTN);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.res_lbl);
             this.Controls.Add(this.ll1);
@@ -174,6 +235,7 @@
             this.Controls.Add(this.l1);
             this.Controls.Add(this.add_newBtn);
             this.Controls.Add(this.showReadybtn);
+            this.Controls.Add(this.dgw1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -200,5 +262,11 @@
         private System.Windows.Forms.LinkLabel ll1;
         private System.Windows.Forms.Label res_lbl;
         private System.Windows.Forms.Button save_btn;
+        private System.Windows.Forms.Button okbTN;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox name_zag;
+        private System.Windows.Forms.TextBox mat_zag;
     }
 }

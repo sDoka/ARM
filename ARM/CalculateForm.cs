@@ -15,13 +15,14 @@ namespace ARM
         int form_width;
         const double p = 3.14;
         double formula;
+        string headers;
         MyDB m = new MyDB();
         string s = "";
         public CalculateForm(string Table)
         {
            
             InitializeComponent();
-            
+            save_btn.Enabled = false;
             s = Table;
             this.Text += " для " + s + "";
             dgw1.Visible = false;
@@ -32,23 +33,28 @@ namespace ARM
         {
             switch (s)
             {
-                case "Прямик":
+                case "Прямик"://headers- потом передать в функцию инсерта
+                    headers = "[Наименование заготовки],[Материал заготовки],[Длина заготовки],[Ширина заготовки],[Высота заготовки],[Площадь]";
                     form_width = 800;
                     this.pramik();
                     break;
                 case "Зонт трапецевидный":
+                    headers = "[Наименование заготовки],[Материал заготовки],[Длина нижнего основания],[Длина верхнего основания],[Высота трапеции],[Площадь]";
                     form_width = 700;
                     this.trapec();
                     break;
                 case "Зонт конусообразный":
+                    headers = "[Наименование заготовки],[Материал заготовки],[Радиус круга],[Угол вырезаемого сегмента],[Площадь]";
                     form_width = 710;
                     this.konus();
                     break;
                 case "Зонт пирамидный":
+                    headers = "[Наименование заготовки],[Материал заготовки],[Длина первого основания],[Длина второго основания],[Высота треугольника],[Площадь]";
                     form_width = 820;
                     this.piramid();
                     break;
                 case "Переход центровой":
+                    headers = "[Наименование заготовки],[Материал заготовки],[Длина нижнего основания],[Длина верхнего основания],[Высота трапеции],[Площадь]";
                     form_width = 710;
                     this.centr();
                     break;
@@ -126,6 +132,12 @@ namespace ARM
         {
             double R = Convert.ToDouble(tb1.Text) / 100;
             double A = Convert.ToDouble(tb2.Text);
+            if (A > 180)
+            {
+                MessageBox.Show("Угол не может быть более 180 градусов!");
+                return;
+            }
+                
             formula = (p * R * R) - (((p * R * R) / 360) * A);
         }
         private void piramid()
@@ -141,7 +153,7 @@ namespace ARM
             double A = Convert.ToDouble(tb1.Text) / 100;
             double B = Convert.ToDouble(tb2.Text) / 100;
             double H = Convert.ToDouble(tb3.Text) / 100;
-            formula = ((1 / 2) * A * H) * 2 + ((1 / 2) * B * H) * 2;
+            formula = ((0.5) * A * H) * 2 + ((0.5) * B * H) * 2;
 
         }
         private void centr()
@@ -163,11 +175,20 @@ namespace ARM
         {
             this.count_it();
             res_lbl.Text = "Площадь заготовки";
-                ll1.Text = formula.ToString() +" м^2";
+            ll1.Text = formula.ToString(".####") + " м^2";
+            this.save_btn.Enabled = true;
         }
 
         private void save_btn_Click(object sender, EventArgs e)
         {
+            if (formula != 0)
+            {
+                tb1.Enabled = false;
+                tb2.Enabled = false;
+                tb3.Enabled = false;
+                m.form_Heigher(this, 260);
+            }
+            else { MessageBox.Show("Расчёты не произведены, нечего сохранять"); }
 
         }
 
@@ -192,6 +213,24 @@ namespace ARM
                    
                
             }
+
+        }
+
+        private void okbTN_Click(object sender, EventArgs e)//вызывает запись измерений в базу
+        {
+
+            //собрать строку инпута
+            StringBuilder sb = new StringBuilder();
+            if (s!="Зонт конусообразный")
+                sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + tb3.Text.ToString() + "','" + formula.ToString(".####"));
+            else
+                sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + formula.ToString(".####"));
+            string input = sb.ToString();
+            m.universal_insert(s, headers, input);
+            tb1.Enabled = true;
+            tb2.Enabled = true;
+            tb3.Enabled = true;
+            m.form_Heigher(this, 180);
 
         }
 

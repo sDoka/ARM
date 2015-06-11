@@ -107,7 +107,31 @@ namespace ARM
            }
        }
 
-       public void form_Wider(Form f, int w)//альтернативная анимация изменения формы. активная
+
+
+       public void universal_insert(string tablename, string headers, string input)//шаблон для вставки headers- набор столбцов, input- набор ячеек
+       {
+          //нам нужен набор столбцов и набор ячеек для вставки
+
+
+           try
+           {
+               MyConnection.Open();
+               string sql = " Insert into dbo.[" + tablename + "] (" + headers + ") values ('" + input + "') ";
+               da.InsertCommand = new SqlCommand(sql, MyConnection);
+               da.InsertCommand.ExecuteNonQuery();
+               MyConnection.Close();
+               MessageBox.Show("Расчёт добавлен");
+           }
+           catch { MessageBox.Show("Не удалось выполнить вставку"); return; }
+
+
+
+       }
+
+
+
+              public void form_Wider(Form f, int w)//альтернативная анимация изменения формы. активная
        {
           if (f.Width < w)
            for (int i = f.Width; f.Width < w; i++)//если текущая ширина меньше - увеличиваем
@@ -121,8 +145,22 @@ namespace ARM
                   f.Width = f.Width - 5;
                   f.Refresh();
               }
-          
-
        }
+
+              public void form_Heigher(Form f, int w)//альтернативная анимация изменения формы. активная
+              {
+                  if (f.Height < w)
+                      for (int i = f.Height; f.Height < w; i++)//если текущая высота меньше - увеличиваем
+                      {
+                          f.Height = f.Height + 5;
+                          f.Refresh();
+                      }
+                  else if (f.Height > w)
+                      for (int i = w; f.Height > w; i++)//если больше- уменьшаем
+                      {
+                          f.Height = f.Height - 5;
+                          f.Refresh();
+                      }
+              }
     }
 }
