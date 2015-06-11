@@ -54,9 +54,9 @@
             // 
             this.showReadybtn.Location = new System.Drawing.Point(12, 86);
             this.showReadybtn.Name = "showReadybtn";
-            this.showReadybtn.Size = new System.Drawing.Size(81, 50);
+            this.showReadybtn.Size = new System.Drawing.Size(81, 60);
             this.showReadybtn.TabIndex = 1;
-            this.showReadybtn.Text = "Показать/скрыть расчитанные заготовки";
+            this.showReadybtn.Text = "Показать / скрыть расчитанные заготовки";
             this.showReadybtn.UseVisualStyleBackColor = true;
             this.showReadybtn.Click += new System.EventHandler(this.showReadybtn_Click);
             // 
@@ -177,9 +177,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(55, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 13);
+            this.label1.Size = new System.Drawing.Size(384, 13);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Для внесения изменрений в базу необходимо указать ещё пару моментов";
+            this.label1.Text = "Для внесения измерений в базу необходимо указать ещё пару моментов";
             // 
             // label2
             // 
@@ -217,7 +217,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 140);
+            this.ClientSize = new System.Drawing.Size(484, 148);
+            this.Controls.Add(this.dgw1);
             this.Controls.Add(this.mat_zag);
             this.Controls.Add(this.name_zag);
             this.Controls.Add(this.label3);
@@ -235,7 +236,6 @@
             this.Controls.Add(this.l1);
             this.Controls.Add(this.add_newBtn);
             this.Controls.Add(this.showReadybtn);
-            this.Controls.Add(this.dgw1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -98,9 +98,9 @@ namespace ARM
         }
         private void pramik_f()
         {
-            double L = Convert.ToDouble(tb1.Text) / 100;
-            double B = Convert.ToDouble(tb2.Text) / 100;
-            double H = Convert.ToDouble(tb3.Text) / 100;
+            double L = Convert.ToDouble(tb1.Text) / 1000;
+            double B = Convert.ToDouble(tb2.Text) / 1000;
+            double H = Convert.ToDouble(tb3.Text) / 1000;
             formula = L * B * H;
         }
         private void trapec()
@@ -113,9 +113,9 @@ namespace ARM
         }
         private void trapec_f()
         {
-            double A = Convert.ToDouble(tb1.Text) / 100;
-            double B = Convert.ToDouble(tb2.Text) / 100;
-            double H = Convert.ToDouble(tb3.Text) / 100;
+            double A = Convert.ToDouble(tb1.Text) / 1000;
+            double B = Convert.ToDouble(tb2.Text) / 1000;
+            double H = Convert.ToDouble(tb3.Text) / 1000;
             formula = ((((A * B) / 2)) * H) * 4;
 
         }
@@ -130,7 +130,7 @@ namespace ARM
         }
         private void konus_f()
         {
-            double R = Convert.ToDouble(tb1.Text) / 100;
+            double R = Convert.ToDouble(tb1.Text) / 1000;
             double A = Convert.ToDouble(tb2.Text);
             if (A > 180)
             {
@@ -150,9 +150,9 @@ namespace ARM
         }
         private void piramid_f()
         {
-            double A = Convert.ToDouble(tb1.Text) / 100;
-            double B = Convert.ToDouble(tb2.Text) / 100;
-            double H = Convert.ToDouble(tb3.Text) / 100;
+            double A = Convert.ToDouble(tb1.Text) / 1000;
+            double B = Convert.ToDouble(tb2.Text) / 1000;
+            double H = Convert.ToDouble(tb3.Text) / 1000;
             formula = ((0.5) * A * H) * 2 + ((0.5) * B * H) * 2;
 
         }
@@ -165,9 +165,9 @@ namespace ARM
         }
         private void centr_f()
         {
-            double A = Convert.ToDouble(tb1.Text) / 100;
-            double B = Convert.ToDouble(tb2.Text) / 100;
-            double H = Convert.ToDouble(tb3.Text) / 100;
+            double A = Convert.ToDouble(tb1.Text) / 1000;
+            double B = Convert.ToDouble(tb2.Text) / 1000;
+            double H = Convert.ToDouble(tb3.Text) / 1000;
             formula = ((((A * B) / 2)) * H) * 4;
         }
 

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Data.Sql;
 
 namespace ARM
 {
@@ -19,9 +20,12 @@ namespace ARM
        {
           
        }
-        SqlConnection MyConnection = new SqlConnection("Data Source=DOKA;Initial Catalog=ARM;Integrated Security=True;" +
-                                                            "Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
-        SqlDataAdapter da = new SqlDataAdapter();
+        SqlConnection MyConnection = new SqlConnection("Data Source=Doka;Initial Catalog=ARM;Integrated Security=True;" +
+                                                          "Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+
+
+
+       SqlDataAdapter da = new SqlDataAdapter();
 
 
        public bool check_user(string a, string b)
