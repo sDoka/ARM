@@ -88,6 +88,41 @@ namespace ARM
            { }
 
        }
+       public DataSet universal_select(string s)
+       {
+           try
+           {
+               MyConnection.Open();
+               DataSet ds = new DataSet();
+               SqlDataAdapter da = new SqlDataAdapter("Select * From dbo.["+s+"]", MyConnection);
+               da.Fill(ds, "Workers");
+               MyConnection.Close();
+               return ds;
 
+           }
+           catch
+           {
+               MessageBox.Show("Произошла ошибка отображения");
+               return null; 
+           }
+       }
+
+       public void form_Wider(Form f, int w)//альтернативная анимация изменения формы. активная
+       {
+          if (f.Width < w)
+           for (int i = f.Width; f.Width < w; i++)//если текущая ширина меньше - увеличиваем
+           {
+               f.Width = f.Width + 5;
+               f.Refresh();
+           }
+          else if (f.Width > w)
+              for (int i = w; f.Width > w; i++)//если больше- уменьшаем
+              {
+                  f.Width = f.Width - 5;
+                  f.Refresh();
+              }
+          
+
+       }
     }
 }
