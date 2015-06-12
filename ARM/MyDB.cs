@@ -166,5 +166,26 @@ namespace ARM
                           f.Refresh();
                       }
               }
+
+
+       public DataSet show_me_worktime(DateTime s, DateTime f)
+              {
+                    
+                  try
+                  {
+                      MyConnection.Open();
+                      DataSet ds = new DataSet();
+                      SqlDataAdapter da = new SqlDataAdapter("Select * From [dbo].[WorkSessions]", MyConnection);
+                      da.Fill(ds, "Sessions");
+                      MyConnection.Close();
+                      return ds;
+
+                  }
+                  catch
+                  {
+                      MessageBox.Show("Произошла ошибка вывода");
+                      return null;
+                  }
+              }
     }
 }
