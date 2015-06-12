@@ -23,7 +23,7 @@ namespace ARM
         public AdminForm()
         {
             InitializeComponent();
-            cb1.SelectedIndex = 0;
+           
         }
 
         private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,10 +51,6 @@ namespace ARM
 
         private void raschet_Click(object sender, EventArgs e)
         {
-            string s = cb1.SelectedItem.ToString();
-            
-            CalculateForm calc = new CalculateForm(s);
-            calc.Show();
 
         }
 
@@ -82,6 +78,19 @@ namespace ARM
             ws.Show();
            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void new_orderBTN_Click(object sender, EventArgs e)
+        {
+            NewOrderForm nof = new NewOrderForm();
+            nof.Show();
+        }
+
+
 
 
 

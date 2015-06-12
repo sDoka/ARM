@@ -41,7 +41,7 @@ namespace ARM
           sec = time[2];
           l3.Visible = true;
           ll1.Visible = true;
-          ll1.Text += " "+hour+" часов "+min+" минут "+sec+" секунд";
+          ll1.Text = " "+hour+" часов "+min+" минут "+sec+" секунд";
              //this.Close();
 
         }

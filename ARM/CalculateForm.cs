@@ -225,14 +225,25 @@ namespace ARM
                 sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + tb3.Text.ToString() + "','" + formula.ToString(".####"));
             else
                 sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + formula.ToString(".####"));
-            string input = sb.ToString();
+            string input = sb.ToString();//почему то не вставляет неровные запросы 45,1599
             m.universal_insert(s, headers, input);
             tb1.Enabled = true;
             tb2.Enabled = true;
             tb3.Enabled = true;
             m.form_Heigher(this, 180);
+             string[] args;
+             if (s!="Зонт конусообразный")
+                   args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() +"x"+tb2.Text.ToString()+"x"+tb3.Text.ToString(), formula.ToString(".####"),s };
+             else 
+                 args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() ,tb2.Text.ToString(), formula.ToString(".####"),s };
+           //  System.Threading.Thread.Sleep(20);
+             NewOrderForm nog = new NewOrderForm(args);
+             nog.Show();
+             this.Close();
 
         }
+
+
 
 
 

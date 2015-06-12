@@ -106,6 +106,7 @@
             // 
             this.PassTB.Location = new System.Drawing.Point(33, 94);
             this.PassTB.Name = "PassTB";
+            this.PassTB.PasswordChar = '*';
             this.PassTB.Size = new System.Drawing.Size(163, 20);
             this.PassTB.TabIndex = 2;
             // 
