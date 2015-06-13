@@ -90,6 +90,12 @@ namespace ARM
             nof.Show();
         }
 
+        private void done_ordersBTN_Click(object sender, EventArgs e)
+        {
+            Orders o = new Orders();
+            o.Show();
+        }
+
 
 
 

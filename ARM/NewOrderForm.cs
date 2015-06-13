@@ -89,6 +89,11 @@ namespace ARM
            
         }
 
+        private void backBTN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
 
     }
 }

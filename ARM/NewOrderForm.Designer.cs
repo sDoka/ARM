@@ -50,6 +50,7 @@
             this.matTB = new System.Windows.Forms.TextBox();
             this.lb2 = new System.Windows.Forms.Label();
             this.AcceptOrderBTN = new System.Windows.Forms.Button();
+            this.backBTN = new System.Windows.Forms.Button();
             this.gb1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -245,11 +246,22 @@
             this.AcceptOrderBTN.UseVisualStyleBackColor = true;
             this.AcceptOrderBTN.Click += new System.EventHandler(this.AcceptOrderBTN_Click);
             // 
+            // backBTN
+            // 
+            this.backBTN.Location = new System.Drawing.Point(600, 122);
+            this.backBTN.Name = "backBTN";
+            this.backBTN.Size = new System.Drawing.Size(89, 21);
+            this.backBTN.TabIndex = 18;
+            this.backBTN.Text = "На главную";
+            this.backBTN.UseVisualStyleBackColor = true;
+            this.backBTN.Click += new System.EventHandler(this.backBTN_Click);
+            // 
             // NewOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 155);
+            this.Controls.Add(this.backBTN);
             this.Controls.Add(this.AcceptOrderBTN);
             this.Controls.Add(this.matTB);
             this.Controls.Add(this.lb2);
@@ -304,5 +316,6 @@
         private System.Windows.Forms.TextBox matTB;
         private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.Button AcceptOrderBTN;
+        private System.Windows.Forms.Button backBTN;
     }
 }

@@ -133,8 +133,9 @@
             this.done_ordersBTN.Name = "done_ordersBTN";
             this.done_ordersBTN.Size = new System.Drawing.Size(89, 36);
             this.done_ordersBTN.TabIndex = 2;
-            this.done_ordersBTN.Text = "Выполненные заказы";
+            this.done_ordersBTN.Text = "Оформленные заказы";
             this.done_ordersBTN.UseVisualStyleBackColor = true;
+            this.done_ordersBTN.Click += new System.EventHandler(this.done_ordersBTN_Click);
             // 
             // new_orderBTN
             // 

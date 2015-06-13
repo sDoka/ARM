@@ -196,7 +196,81 @@ namespace ARM
                       return null;
                   }
               }
+       public DataSet show_orders(string s)
+       {
+           MyConnection.Open();
+           DataSet ds = new DataSet();
+         try
+             {
+              switch (s)
+               {
+               case "Все заказы":
+                       da = new SqlDataAdapter("Select [Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы]", MyConnection);
+                   break;
+               case "Выполненные заказы":
+                   da = new SqlDataAdapter("Select [Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 1)", MyConnection);
+                   break;
+               case "Заказы в производстве":
+                   da = new SqlDataAdapter("Select [Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 0)", MyConnection);
+                   break;
 
+           }
+               da.Fill(ds, "Sessions");
+               MyConnection.Close();
+               return ds;
+
+           }
+           catch
+           {
+               MessageBox.Show("Произошла ошибка вывода");
+               return null;
+           }
+       }
+
+       public List<string> get_exact_name()
+       {
+           List<string> ls = new List<string>();
+           try
+           {
+               MyConnection.Open();
+               DataSet ds = new DataSet();
+               SqlDataAdapter da = new SqlDataAdapter("Select [Наименование] From [dbo].[Заказы]", MyConnection);
+               da.Fill(ds, "Names");
+               MyConnection.Close();
+               DataTable dt = ds.Tables[0];
+               for (int i = 0; i < dt.Rows.Count; i++)
+                   ls.Add(dt.Rows[i][0].ToString().Trim());
+               ls = ls.Distinct().ToList();
+                   return ls;
+
+           }
+           catch
+           {
+               MessageBox.Show("Произошла ошибка вывода");
+               ls.Add("Не удалось загрузить список");
+               return ls;
+
+           }
+       }
+
+       public DataSet show_exact_order(string s)
+       {
+           try
+                  {
+                      MyConnection.Open();
+                      DataSet ds = new DataSet();
+                      da = new SqlDataAdapter("Select [Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] where ( [Наименование] = '"+s+"')", MyConnection);
+                      da.Fill(ds, "Sessions");
+                      MyConnection.Close();
+                      return ds;
+
+                  }
+                  catch
+                  {
+                      MessageBox.Show("Произошла ошибка вывода");
+                      return null;
+                  }
+       }
 
 
     }
