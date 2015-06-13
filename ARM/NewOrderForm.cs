@@ -34,16 +34,23 @@ namespace ARM
             workresCB.SelectedIndex = 0;
               if (args.Count() == 5)//все кроме конуса
               {
-                  
-                  nameTB.Text = args[0].ToString();//не хочет падла((( доделать
+
+                  nameTB.Text = args[0];
                   matTB.Text = args[1];
                   sizeTB.Text = args[2];
                   sTB.Text = args[3];
-                  typeTB.Text = args[4];
+                  primTB.Text = args[4];
+                  countTB.Text = "1";
               }
               else
               {//для конуса
-
+                  nameTB.Text = args[0];
+                  matTB.Text = args[1];
+                  sizeTB.Text = args[2];
+                  angleTB.Text = args[3];
+                  sTB.Text = args[4];
+                  primTB.Text = args[5];
+                  countTB.Text = "1";
               }
             //список рабочих
           
@@ -61,6 +68,25 @@ namespace ARM
             calc.Show();
             this.Close();
 
+        }
+
+        private void AcceptOrderBTN_Click(object sender, EventArgs e)
+        {
+            string tname = "Заказы"; //название таблицы
+            string headers = "[Наименование],[Материал] ,[Размеры изделия],[Центр Угол],[Площадь заготовки],[Количество],[Примечание],[Ответственный],[Статус]"; //заголовки столбцов
+            string input =   nameTB.Text +"','"+matTB.Text+"','"+sizeTB.Text+"','"+angleTB.Text+"','"+sTB.Text+"','"+countTB.Text+"','"+primTB.Text+"','"
+                +workresCB.SelectedItem.ToString().Trim()+"','0"; //вносимые значения
+            try
+            {
+                m.universal_insert(tname, headers, input);
+                MessageBox.Show("Заказ сформирован");
+                NewOrderForm nof = new NewOrderForm();
+                nof.Show();
+                this.Close();
+
+            }
+            catch { }
+           
         }
 
 

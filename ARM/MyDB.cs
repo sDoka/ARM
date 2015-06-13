@@ -22,6 +22,8 @@ namespace ARM
        }
         SqlConnection MyConnection = new SqlConnection("Data Source=Doka;Initial Catalog=ARM;Integrated Security=True;" +
                                                           "Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+      //  SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ARM.mdf;Integrated Security=True;Connect Timeout=30");
+
 
 
 
@@ -194,5 +196,8 @@ namespace ARM
                       return null;
                   }
               }
+
+
+
     }
 }

@@ -41,7 +41,7 @@
             this.angleTB = new System.Windows.Forms.TextBox();
             this.sTB = new System.Windows.Forms.TextBox();
             this.countTB = new System.Windows.Forms.TextBox();
-            this.typeTB = new System.Windows.Forms.TextBox();
+            this.primTB = new System.Windows.Forms.TextBox();
             this.workresCB = new System.Windows.Forms.ComboBox();
             this.gb1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -155,13 +155,13 @@
             this.countTB.Size = new System.Drawing.Size(54, 20);
             this.countTB.TabIndex = 12;
             // 
-            // typeTB
+            // primTB
             // 
-            this.typeTB.Enabled = false;
-            this.typeTB.Location = new System.Drawing.Point(622, 41);
-            this.typeTB.Name = "typeTB";
-            this.typeTB.Size = new System.Drawing.Size(77, 20);
-            this.typeTB.TabIndex = 13;
+            this.primTB.Enabled = false;
+            this.primTB.Location = new System.Drawing.Point(622, 41);
+            this.primTB.Name = "primTB";
+            this.primTB.Size = new System.Drawing.Size(77, 20);
+            this.primTB.TabIndex = 13;
             // 
             // workresCB
             // 
@@ -243,6 +243,7 @@
             this.AcceptOrderBTN.TabIndex = 3;
             this.AcceptOrderBTN.Text = "Оформить заказ";
             this.AcceptOrderBTN.UseVisualStyleBackColor = true;
+            this.AcceptOrderBTN.Click += new System.EventHandler(this.AcceptOrderBTN_Click);
             // 
             // NewOrderForm
             // 
@@ -254,7 +255,7 @@
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.workresCB);
-            this.Controls.Add(this.typeTB);
+            this.Controls.Add(this.primTB);
             this.Controls.Add(this.countTB);
             this.Controls.Add(this.sTB);
             this.Controls.Add(this.angleTB);
@@ -294,7 +295,7 @@
         private System.Windows.Forms.TextBox angleTB;
         private System.Windows.Forms.TextBox sTB;
         private System.Windows.Forms.TextBox countTB;
-        private System.Windows.Forms.TextBox typeTB;
+        private System.Windows.Forms.TextBox primTB;
         private System.Windows.Forms.ComboBox workresCB;
         private System.Windows.Forms.GroupBox gb1;
         private System.Windows.Forms.Label label1;
