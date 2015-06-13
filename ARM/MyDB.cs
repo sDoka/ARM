@@ -205,13 +205,13 @@ namespace ARM
               switch (s)
                {
                case "Все заказы":
-                       da = new SqlDataAdapter("Select [Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы]", MyConnection);
+                       da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы]", MyConnection);
                    break;
                case "Выполненные заказы":
-                   da = new SqlDataAdapter("Select [Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 1)", MyConnection);
+                   da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 1)", MyConnection);
                    break;
                case "Заказы в производстве":
-                   da = new SqlDataAdapter("Select [Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 0)", MyConnection);
+                   da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 0)", MyConnection);
                    break;
 
            }
@@ -272,7 +272,20 @@ namespace ARM
                   }
        }
 
-
+       public void finish_order(string s)
+       {
+           try
+           {
+               MyConnection.Open();
+               string sql = " update  dbo.[Заказы] set [Статус]='1' where ([№ п/п]="+s+")";
+               //UPDATE dbo.tablename SET col1=@col1,col2=@col2,col3=@col3 WHERE id=@id;
+               da.InsertCommand = new SqlCommand(sql, MyConnection);
+               da.InsertCommand.ExecuteNonQuery();
+               MyConnection.Close();
+               MessageBox.Show("Заказ помечен как выполненный");
+           }
+           catch { MessageBox.Show("Не удалось изменить статус заказа"); return; }
+       }
      
 
        public void save_to_excel(DataGridView dt)
@@ -281,13 +294,6 @@ namespace ARM
            ExcelApp.Application.Workbooks.Add(Type.Missing);
            ExcelApp.Columns.ColumnWidth = 15;
 
-           //ExcelApp.Cells[1, 1] = "№п/п";
-           //ExcelApp.Cells[1, 2] = "Число";
-           //ExcelApp.Cells[1, 3] = "Название";
-           //ExcelApp.Cells[1, 4] = "Количество";
-           //ExcelApp.Cells[1, 5] = "Цена ОПТ";
-           //ExcelApp.Cells[1, 6] = "Цена Розница";
-           //ExcelApp.Cells[1, 7] = "Сумма";
            for (int i = 1; i <= dt.Columns.Count; i++ )
                ExcelApp.Cells[1, i] = dt.Columns[i-1].HeaderText;
 

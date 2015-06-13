@@ -35,6 +35,9 @@
             this.cb2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ToExcelBtn = new System.Windows.Forms.Button();
+            this.zakazNumberBTN = new System.Windows.Forms.Label();
+            this.editTB = new System.Windows.Forms.TextBox();
+            this.editBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgw1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,19 +99,48 @@
             // 
             // ToExcelBtn
             // 
-            this.ToExcelBtn.Location = new System.Drawing.Point(11, 206);
+            this.ToExcelBtn.Location = new System.Drawing.Point(12, 208);
             this.ToExcelBtn.Name = "ToExcelBtn";
-            this.ToExcelBtn.Size = new System.Drawing.Size(117, 34);
+            this.ToExcelBtn.Size = new System.Drawing.Size(117, 35);
             this.ToExcelBtn.TabIndex = 5;
             this.ToExcelBtn.Text = "Выгрузить в Excel";
             this.ToExcelBtn.UseVisualStyleBackColor = true;
             this.ToExcelBtn.Click += new System.EventHandler(this.ToExcelBtn_Click);
             // 
+            // zakazNumberBTN
+            // 
+            this.zakazNumberBTN.AutoSize = true;
+            this.zakazNumberBTN.Location = new System.Drawing.Point(266, 208);
+            this.zakazNumberBTN.Name = "zakazNumberBTN";
+            this.zakazNumberBTN.Size = new System.Drawing.Size(77, 13);
+            this.zakazNumberBTN.TabIndex = 24;
+            this.zakazNumberBTN.Text = "№ заказа п/п";
+            // 
+            // editTB
+            // 
+            this.editTB.Location = new System.Drawing.Point(266, 222);
+            this.editTB.Name = "editTB";
+            this.editTB.Size = new System.Drawing.Size(80, 20);
+            this.editTB.TabIndex = 23;
+            // 
+            // editBTN
+            // 
+            this.editBTN.Location = new System.Drawing.Point(163, 208);
+            this.editBTN.Name = "editBTN";
+            this.editBTN.Size = new System.Drawing.Size(97, 34);
+            this.editBTN.TabIndex = 22;
+            this.editBTN.Text = "Завершить заказ";
+            this.editBTN.UseVisualStyleBackColor = true;
+            this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 241);
+            this.ClientSize = new System.Drawing.Size(653, 251);
+            this.Controls.Add(this.zakazNumberBTN);
+            this.Controls.Add(this.editTB);
+            this.Controls.Add(this.editBTN);
             this.Controls.Add(this.ToExcelBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cb2);
@@ -136,5 +168,8 @@
         private System.Windows.Forms.ComboBox cb2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ToExcelBtn;
+        private System.Windows.Forms.Label zakazNumberBTN;
+        private System.Windows.Forms.TextBox editTB;
+        private System.Windows.Forms.Button editBTN;
     }
 }

@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.workers = new System.Windows.Forms.Button();
-            this.update_orders = new System.Windows.Forms.Button();
             this.gb2 = new System.Windows.Forms.GroupBox();
+            this.done_ordersBTN = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.findFileBnt = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.workSessionBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.done_ordersBTN = new System.Windows.Forms.Button();
             this.new_orderBTN = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gb2.SuspendLayout();
@@ -56,15 +55,6 @@
             this.workers.UseVisualStyleBackColor = true;
             this.workers.Click += new System.EventHandler(this.workers_Click);
             // 
-            // update_orders
-            // 
-            this.update_orders.Location = new System.Drawing.Point(153, 19);
-            this.update_orders.Name = "update_orders";
-            this.update_orders.Size = new System.Drawing.Size(89, 37);
-            this.update_orders.TabIndex = 2;
-            this.update_orders.Text = "Управление заказами";
-            this.update_orders.UseVisualStyleBackColor = true;
-            // 
             // gb2
             // 
             this.gb2.Controls.Add(this.done_ordersBTN);
@@ -75,6 +65,16 @@
             this.gb2.TabIndex = 4;
             this.gb2.TabStop = false;
             this.gb2.Text = "Отчёты";
+            // 
+            // done_ordersBTN
+            // 
+            this.done_ordersBTN.Location = new System.Drawing.Point(10, 19);
+            this.done_ordersBTN.Name = "done_ordersBTN";
+            this.done_ordersBTN.Size = new System.Drawing.Size(89, 36);
+            this.done_ordersBTN.TabIndex = 2;
+            this.done_ordersBTN.Text = "Заказы";
+            this.done_ordersBTN.UseVisualStyleBackColor = true;
+            this.done_ordersBTN.Click += new System.EventHandler(this.done_ordersBTN_Click);
             // 
             // groupBox1
             // 
@@ -119,23 +119,12 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.new_orderBTN);
-            this.groupBox3.Controls.Add(this.update_orders);
             this.groupBox3.Location = new System.Drawing.Point(14, 157);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(259, 67);
+            this.groupBox3.Size = new System.Drawing.Size(116, 67);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Заказы";
-            // 
-            // done_ordersBTN
-            // 
-            this.done_ordersBTN.Location = new System.Drawing.Point(10, 19);
-            this.done_ordersBTN.Name = "done_ordersBTN";
-            this.done_ordersBTN.Size = new System.Drawing.Size(89, 36);
-            this.done_ordersBTN.TabIndex = 2;
-            this.done_ordersBTN.Text = "Заказы";
-            this.done_ordersBTN.UseVisualStyleBackColor = true;
-            this.done_ordersBTN.Click += new System.EventHandler(this.done_ordersBTN_Click);
             // 
             // new_orderBTN
             // 
@@ -149,7 +138,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(95, 230);
+            this.button1.Location = new System.Drawing.Point(167, 176);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 35);
             this.button1.TabIndex = 7;
@@ -161,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 273);
+            this.ClientSize = new System.Drawing.Size(283, 238);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -186,7 +175,6 @@
         #endregion
 
         private System.Windows.Forms.Button workers;
-        private System.Windows.Forms.Button update_orders;
         private System.Windows.Forms.GroupBox gb2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button findFileBnt;

@@ -204,18 +204,18 @@
             "Зонт пирамидный",
             "Зонт трапецевидный",
             "Переход центровой"});
-            this.cb1.Location = new System.Drawing.Point(9, 49);
+            this.cb1.Location = new System.Drawing.Point(12, 44);
             this.cb1.Name = "cb1";
             this.cb1.Size = new System.Drawing.Size(155, 21);
             this.cb1.TabIndex = 1;
             // 
             // raschet
             // 
-            this.raschet.Location = new System.Drawing.Point(170, 49);
+            this.raschet.Location = new System.Drawing.Point(170, 36);
             this.raschet.Name = "raschet";
-            this.raschet.Size = new System.Drawing.Size(89, 21);
+            this.raschet.Size = new System.Drawing.Size(89, 34);
             this.raschet.TabIndex = 0;
-            this.raschet.Text = "Старт";
+            this.raschet.Text = "Оформить новый";
             this.raschet.UseVisualStyleBackColor = true;
             this.raschet.Click += new System.EventHandler(this.raschet_Click);
             // 
@@ -238,7 +238,7 @@
             // 
             // AcceptOrderBTN
             // 
-            this.AcceptOrderBTN.Location = new System.Drawing.Point(713, 122);
+            this.AcceptOrderBTN.Location = new System.Drawing.Point(730, 110);
             this.AcceptOrderBTN.Name = "AcceptOrderBTN";
             this.AcceptOrderBTN.Size = new System.Drawing.Size(89, 21);
             this.AcceptOrderBTN.TabIndex = 3;
@@ -248,7 +248,7 @@
             // 
             // backBTN
             // 
-            this.backBTN.Location = new System.Drawing.Point(600, 122);
+            this.backBTN.Location = new System.Drawing.Point(730, 134);
             this.backBTN.Name = "backBTN";
             this.backBTN.Size = new System.Drawing.Size(89, 21);
             this.backBTN.TabIndex = 18;
@@ -285,7 +285,7 @@
             this.MinimizeBox = false;
             this.Name = "NewOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Новый заказ";
+            this.Text = "Работа с заказками";
             this.gb1.ResumeLayout(false);
             this.gb1.PerformLayout();
             this.ResumeLayout(false);

@@ -49,7 +49,7 @@ namespace ARM
                 if (i == 0)
                 {
                     m.form_Heigher(this, 280);
-                    m.form_Wider(this, 650);
+                    m.form_Wider(this, 750);
                     i = 1;
                 }
 
@@ -95,6 +95,16 @@ namespace ARM
         private void ToExcelBtn_Click(object sender, EventArgs e)
         {
             m.save_to_excel(dgw1);
+        }
+
+        private void editBTN_Click(object sender, EventArgs e)
+        {
+            if (editTB.Text != "")
+            {
+                string s = editTB.Text.ToString();
+                m.finish_order(s);
+                dgw1.Update();
+            }
         }
     }
 }

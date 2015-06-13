@@ -238,6 +238,7 @@ namespace ARM
                  args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() ,tb2.Text.ToString(), formula.ToString(".####"),s };
            //  System.Threading.Thread.Sleep(20);
              NewOrderForm nog = new NewOrderForm(args);
+            // MessageBox.Show("Расчёт добавлен");
              nog.Show();
              this.Close();
 
