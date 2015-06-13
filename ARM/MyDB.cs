@@ -33,7 +33,9 @@ namespace ARM
 
            MyConnection.Open();
            DataSet ds1 = new DataSet();
-           SqlDataAdapter da = new SqlDataAdapter("Use ARM Exec check_user '" + a + "','" + b + "'", MyConnection);
+          // SqlDataAdapter da = new SqlDataAdapter("Use ARM Exec check_user '" + a + "','" + b + "'", MyConnection);
+           SqlDataAdapter da = new SqlDataAdapter("select [Login],[Password] From dbo.Users WHERE (login='"+a+"' AND Password = '"+b+"')",MyConnection);
+
            da.Fill(ds1, "Res");
            MyConnection.Close();
            if (ds1.Tables["Res"].Rows.Count == 0)
@@ -47,7 +49,8 @@ namespace ARM
            DataSet ds1 = new DataSet();
            try
            {
-               string sql = "use ARM exec add_admin '"+a+"','"+b+"'";
+             //  string sql = "use ARM exec add_admin '"+a+"','"+b+"'";
+               string sql = " insert into dbo.Users (Login, Password) values ('"+a+"','"+b+"')";
                da.InsertCommand= new SqlCommand(sql, MyConnection);
                da.InsertCommand.ExecuteNonQuery();
                MessageBox.Show("Новый администратор успешно зарегистрирован");
@@ -69,7 +72,8 @@ namespace ARM
        {
            MyConnection.Open();
            DataSet ds = new DataSet();
-           SqlDataAdapter da = new SqlDataAdapter("Use ARM Exec show_personal", MyConnection);
+          // SqlDataAdapter da = new SqlDataAdapter("Use ARM Exec show_personal", MyConnection);
+           SqlDataAdapter da = new SqlDataAdapter(" SELECT * from dbo.[Персонал]", MyConnection);
            da.Fill(ds, "Workers");
            MyConnection.Close();
            return ds;
@@ -83,13 +87,15 @@ namespace ARM
            try
            {
                MyConnection.Open();
-               string sql = "use ARM exec add_work '" + s +"','" + f + "'";
+             //  string sql = "use ARM exec add_work '" + s +"','" + f + "'";
+               string sql = " insert into dbo.[WorkSessions] ([Начало работы],[Конец работы]) values ('" + s + "','" + f + "')";
+                          
                da.InsertCommand = new SqlCommand(sql, MyConnection);
                da.InsertCommand.ExecuteNonQuery();
                MyConnection.Close();
            }
            catch
-           { }
+           { MyConnection.Close(); }
 
        }
        public DataSet universal_select(string s)
@@ -99,6 +105,7 @@ namespace ARM
                MyConnection.Open();
                DataSet ds = new DataSet();
                SqlDataAdapter da = new SqlDataAdapter("Select * From dbo.["+s+"]", MyConnection);
+              
                da.Fill(ds, "Workers");
                MyConnection.Close();
                return ds;

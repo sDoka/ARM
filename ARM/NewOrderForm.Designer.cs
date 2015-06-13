@@ -49,7 +49,7 @@
             this.raschet = new System.Windows.Forms.Button();
             this.matTB = new System.Windows.Forms.TextBox();
             this.lb2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AcceptOrderBTN = new System.Windows.Forms.Button();
             this.gb1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,25 +231,25 @@
             this.lb2.AutoSize = true;
             this.lb2.Location = new System.Drawing.Point(126, 13);
             this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(83, 13);
+            this.lb2.Size = new System.Drawing.Size(57, 13);
             this.lb2.TabIndex = 16;
-            this.lb2.Text = "Наименование";
+            this.lb2.Text = "Материал";
             // 
-            // button1
+            // AcceptOrderBTN
             // 
-            this.button1.Location = new System.Drawing.Point(713, 122);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 21);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Оформить заказ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AcceptOrderBTN.Location = new System.Drawing.Point(713, 122);
+            this.AcceptOrderBTN.Name = "AcceptOrderBTN";
+            this.AcceptOrderBTN.Size = new System.Drawing.Size(89, 21);
+            this.AcceptOrderBTN.TabIndex = 3;
+            this.AcceptOrderBTN.Text = "Оформить заказ";
+            this.AcceptOrderBTN.UseVisualStyleBackColor = true;
             // 
             // NewOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 155);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AcceptOrderBTN);
             this.Controls.Add(this.matTB);
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.gb1);
@@ -302,6 +302,6 @@
         private System.Windows.Forms.Button raschet;
         private System.Windows.Forms.TextBox matTB;
         private System.Windows.Forms.Label lb2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AcceptOrderBTN;
     }
 }
