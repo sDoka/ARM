@@ -48,7 +48,7 @@ namespace ARM
                 dgw1.DataSource = dt;
                 if (i == 0)
                 {
-                    m.form_Heigher(this, 250);
+                    m.form_Heigher(this, 280);
                     m.form_Wider(this, 650);
                     i = 1;
                 }
@@ -83,13 +83,18 @@ namespace ARM
            dgw1.DataSource = dt;
            if (k == 0)
            {
-               m.form_Heigher(this, 260);
+               m.form_Heigher(this, 280);
                m.form_Wider(this, 540);
                k = 1;
            }
 
            dgw1.Visible = true;
 
+        }
+
+        private void ToExcelBtn_Click(object sender, EventArgs e)
+        {
+            m.save_to_excel(dgw1);
         }
     }
 }

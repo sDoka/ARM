@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.workers = new System.Windows.Forms.Button();
-            this.results = new System.Windows.Forms.Button();
+            this.update_orders = new System.Windows.Forms.Button();
             this.gb2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.findFileBnt = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             // 
             // workers
             // 
-            this.workers.Location = new System.Drawing.Point(146, 19);
+            this.workers.Location = new System.Drawing.Point(153, 18);
             this.workers.Name = "workers";
             this.workers.Size = new System.Drawing.Size(89, 37);
             this.workers.TabIndex = 1;
@@ -56,19 +56,19 @@
             this.workers.UseVisualStyleBackColor = true;
             this.workers.Click += new System.EventHandler(this.workers_Click);
             // 
-            // results
+            // update_orders
             // 
-            this.results.Location = new System.Drawing.Point(10, 19);
-            this.results.Name = "results";
-            this.results.Size = new System.Drawing.Size(89, 37);
-            this.results.TabIndex = 2;
-            this.results.Text = "Выполненные работы";
-            this.results.UseVisualStyleBackColor = true;
+            this.update_orders.Location = new System.Drawing.Point(153, 19);
+            this.update_orders.Name = "update_orders";
+            this.update_orders.Size = new System.Drawing.Size(89, 37);
+            this.update_orders.TabIndex = 2;
+            this.update_orders.Text = "Управление заказами";
+            this.update_orders.UseVisualStyleBackColor = true;
             // 
             // gb2
             // 
+            this.gb2.Controls.Add(this.done_ordersBTN);
             this.gb2.Controls.Add(this.workers);
-            this.gb2.Controls.Add(this.results);
             this.gb2.Location = new System.Drawing.Point(14, 12);
             this.gb2.Name = "gb2";
             this.gb2.Size = new System.Drawing.Size(259, 61);
@@ -118,8 +118,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.done_ordersBTN);
             this.groupBox3.Controls.Add(this.new_orderBTN);
+            this.groupBox3.Controls.Add(this.update_orders);
             this.groupBox3.Location = new System.Drawing.Point(14, 157);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(259, 67);
@@ -129,11 +129,11 @@
             // 
             // done_ordersBTN
             // 
-            this.done_ordersBTN.Location = new System.Drawing.Point(153, 19);
+            this.done_ordersBTN.Location = new System.Drawing.Point(10, 19);
             this.done_ordersBTN.Name = "done_ordersBTN";
             this.done_ordersBTN.Size = new System.Drawing.Size(89, 36);
             this.done_ordersBTN.TabIndex = 2;
-            this.done_ordersBTN.Text = "Оформленные заказы";
+            this.done_ordersBTN.Text = "Заказы";
             this.done_ordersBTN.UseVisualStyleBackColor = true;
             this.done_ordersBTN.Click += new System.EventHandler(this.done_ordersBTN_Click);
             // 
@@ -149,7 +149,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(167, 230);
+            this.button1.Location = new System.Drawing.Point(95, 230);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 35);
             this.button1.TabIndex = 7;
@@ -186,7 +186,7 @@
         #endregion
 
         private System.Windows.Forms.Button workers;
-        private System.Windows.Forms.Button results;
+        private System.Windows.Forms.Button update_orders;
         private System.Windows.Forms.GroupBox gb2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button findFileBnt;

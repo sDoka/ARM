@@ -45,30 +45,30 @@
             this.dgw1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgw1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw1.GridColor = System.Drawing.SystemColors.Control;
-            this.dgw1.Location = new System.Drawing.Point(0, 1);
-            this.dgw1.MinimumSize = new System.Drawing.Size(800, 0);
+            this.dgw1.Location = new System.Drawing.Point(12, 10);
             this.dgw1.MultiSelect = false;
             this.dgw1.Name = "dgw1";
             this.dgw1.ReadOnly = true;
             this.dgw1.RowHeadersVisible = false;
             this.dgw1.RowTemplate.ReadOnly = true;
             this.dgw1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgw1.Size = new System.Drawing.Size(800, 260);
+            this.dgw1.Size = new System.Drawing.Size(829, 159);
             this.dgw1.TabIndex = 0;
             this.dgw1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgw1_MouseDown);
             // 
             // Print
             // 
-            this.Print.Location = new System.Drawing.Point(588, 259);
+            this.Print.Location = new System.Drawing.Point(644, 175);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(87, 38);
             this.Print.TabIndex = 1;
             this.Print.Text = "Печать";
             this.Print.UseVisualStyleBackColor = true;
+            this.Print.Visible = false;
             // 
             // excel_our
             // 
-            this.excel_our.Location = new System.Drawing.Point(696, 259);
+            this.excel_our.Location = new System.Drawing.Point(752, 175);
             this.excel_our.Name = "excel_our";
             this.excel_our.Size = new System.Drawing.Size(89, 38);
             this.excel_our.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(13, 276);
+            this.backBtn.Location = new System.Drawing.Point(29, 192);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(75, 23);
             this.backBtn.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 309);
+            this.ClientSize = new System.Drawing.Size(853, 225);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.excel_our);
             this.Controls.Add(this.Print);
@@ -101,7 +101,7 @@
             this.MinimizeBox = false;
             this.Name = "Personal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Personal";
+            this.Text = "Персонал";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Personal_FormClosing);
             this.Load += new System.EventHandler(this.Personal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw1)).EndInit();

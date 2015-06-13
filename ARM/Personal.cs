@@ -42,30 +42,8 @@ namespace ARM
 
         private void excel_our_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = "";
 
-            sfd.DefaultExt = ".csv";
-            sfd.Filter = "Файлы Excel (*.xlsx)| *.xlsx; *.xls";
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                if (File.Exists(sfd.FileName))
-                {
-                    try
-                    {
-                        File.Delete(sfd.FileName);
-
-
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Документ открыт в другом приложении. Закройте и повторите попытку.");
-                    }
-                }
-
-                //вызвать метод для записи из dgw1 -> excel
-                MessageBox.Show("Файл сохранен", "Всё ок =)");
-            }
+            m.save_to_excel(dgw1);
         }
 
         private void dgw1_MouseDown(object sender, MouseEventArgs e)

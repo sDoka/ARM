@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cb2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.ToExcelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgw1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +94,22 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Выберите наименование";
             // 
+            // ToExcelBtn
+            // 
+            this.ToExcelBtn.Location = new System.Drawing.Point(11, 206);
+            this.ToExcelBtn.Name = "ToExcelBtn";
+            this.ToExcelBtn.Size = new System.Drawing.Size(117, 34);
+            this.ToExcelBtn.TabIndex = 5;
+            this.ToExcelBtn.Text = "Выгрузить в Excel";
+            this.ToExcelBtn.UseVisualStyleBackColor = true;
+            this.ToExcelBtn.Click += new System.EventHandler(this.ToExcelBtn_Click);
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 209);
+            this.ClientSize = new System.Drawing.Size(471, 241);
+            this.Controls.Add(this.ToExcelBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cb2);
             this.Controls.Add(this.label1);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ToExcelBtn;
     }
 }

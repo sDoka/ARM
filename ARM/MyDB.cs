@@ -273,5 +273,35 @@ namespace ARM
        }
 
 
+     
+
+       public void save_to_excel(DataGridView dt)
+       {
+           Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+           ExcelApp.Application.Workbooks.Add(Type.Missing);
+           ExcelApp.Columns.ColumnWidth = 15;
+
+           //ExcelApp.Cells[1, 1] = "№п/п";
+           //ExcelApp.Cells[1, 2] = "Число";
+           //ExcelApp.Cells[1, 3] = "Название";
+           //ExcelApp.Cells[1, 4] = "Количество";
+           //ExcelApp.Cells[1, 5] = "Цена ОПТ";
+           //ExcelApp.Cells[1, 6] = "Цена Розница";
+           //ExcelApp.Cells[1, 7] = "Сумма";
+           for (int i = 1; i <= dt.Columns.Count; i++ )
+               ExcelApp.Cells[1, i] = dt.Columns[i-1].HeaderText;
+
+
+           for (int i = 0; i < dt.ColumnCount; i++)
+           {
+               for (int j = 0; j < dt.RowCount; j++)
+               {
+                   ExcelApp.Cells[j + 2, i + 1] = (dt[i, j].Value).ToString();
+               }
+           }
+           ExcelApp.Visible = true;
+       }
+
+
     }
 }
