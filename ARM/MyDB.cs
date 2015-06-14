@@ -280,7 +280,7 @@ namespace ARM
                   {
                       MyConnection.Open();
                       DataSet ds = new DataSet();
-                      da = new SqlDataAdapter("Select [Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] where ( [Наименование] = '"+s+"')", MyConnection);
+                      da = new SqlDataAdapter("Select [Материал],[Размеры изделия],[Площадь заготовки],[Количество],[Примечание],[Ответственный] From [dbo].[Заказы] where ( [Наименование] = '"+s+"')", MyConnection);
                       da.Fill(ds, "Sessions");
                       MyConnection.Close();
                       return ds;

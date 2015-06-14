@@ -74,15 +74,25 @@ namespace ARM
         {
             string tname = "Заказы"; //название таблицы
             string headers = "[Наименование],[Материал] ,[Размеры изделия],[Центр Угол],[Площадь заготовки],[Количество],[Примечание],[Ответственный],[Статус]"; //заголовки столбцов
-            string input =   nameTB.Text +"','"+matTB.Text+"','"+sizeTB.Text+"','"+angleTB.Text+"','"+sTB.Text+"','"+countTB.Text+"','"+primTB.Text+"','"
-                +workresCB.SelectedItem.ToString().Trim()+"','0"; //вносимые значения
+
             try
             {
-                m.universal_insert(tname, headers, input);
-                MessageBox.Show("Заказ сформирован");
+                string input = nameTB.Text + "','" + matTB.Text + "','" + sizeTB.Text + "','" + angleTB.Text + "','" + sTB.Text + "','" + countTB.Text + "','" + primTB.Text + "','"
+                + workresCB.SelectedItem.ToString().Trim() + "','0"; //вносимые значения
+                m.universal_insert(tname, headers, input); MessageBox.Show("Заказ сформирован");
                 NewOrderForm nof = new NewOrderForm();
                 nof.Show();
                 this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Сначала создайте новый заказ");
+            }
+            try
+            {
+                
+               
+              
 
             }
             catch { }

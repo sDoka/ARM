@@ -94,7 +94,7 @@ namespace ARM
            if (k == 0)
            {
                m.form_Heigher(this, 280);
-               m.form_Wider(this, 540);
+               m.form_Wider(this, 640);
                k = 1;
            }
 
