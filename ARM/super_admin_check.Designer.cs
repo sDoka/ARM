@@ -43,11 +43,11 @@
             // ll1
             // 
             this.ll1.AutoSize = true;
-            this.ll1.Location = new System.Drawing.Point(13, 13);
+            this.ll1.Location = new System.Drawing.Point(26, 9);
             this.ll1.Name = "ll1";
-            this.ll1.Size = new System.Drawing.Size(207, 13);
+            this.ll1.Size = new System.Drawing.Size(175, 13);
             this.ll1.TabIndex = 1;
-            this.ll1.Text = "Введите пароль супер администратора";
+            this.ll1.Text = "Введите пароль администратора";
             // 
             // okBtn
             // 

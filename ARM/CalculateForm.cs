@@ -13,6 +13,7 @@ namespace ARM
     public partial class CalculateForm : Form
     {
         int form_width;
+
         const double p = 3.14;
         double formula;
         string headers;
@@ -22,6 +23,7 @@ namespace ARM
         {
            
             InitializeComponent();
+            this.Height = 188;
             save_btn.Enabled = false;
             s = Table;
             this.Text += " для " + s + "";
@@ -175,7 +177,7 @@ namespace ARM
         {
             this.count_it();
             res_lbl.Text = "Площадь заготовки";
-            ll1.Text = formula.ToString(".####") + " м^2";
+            ll1.Text = formula.ToString("0.####") + " м^2";
             this.save_btn.Enabled = true;
         }
 
@@ -222,9 +224,9 @@ namespace ARM
             //собрать строку инпута
             StringBuilder sb = new StringBuilder();
             if (s!="Зонт конусообразный")
-                sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + tb3.Text.ToString() + "','" + formula.ToString(".####"));
+                sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + tb3.Text.ToString() + "','" + formula.ToString("0.####"));
             else
-                sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + formula.ToString(".####"));
+                sb.Append(name_zag.Text.ToString() + "','" + mat_zag.Text.ToString() + "','" + tb1.Text.ToString() + "','" + tb2.Text.ToString() + "','" + formula.ToString("0.####"));
             string input = sb.ToString();//почему то не вставляет неровные запросы 45,1599
             m.universal_insert(s, headers, input);
             tb1.Enabled = true;
@@ -233,9 +235,9 @@ namespace ARM
             m.form_Heigher(this, 180);
              string[] args;
              if (s!="Зонт конусообразный")
-                   args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() +"x"+tb2.Text.ToString()+"x"+tb3.Text.ToString(), formula.ToString(".####"),s };
+                   args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() +"x"+tb2.Text.ToString()+"x"+tb3.Text.ToString(), formula.ToString("0.####"),s };
              else 
-                 args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() ,tb2.Text.ToString(), formula.ToString(".####"),s };
+                 args = new string[]{ name_zag.Text.ToString(),mat_zag.Text.ToString(), tb1.Text.ToString() ,tb2.Text.ToString(), formula.ToString("0.####"),s };
            //  System.Threading.Thread.Sleep(20);
              NewOrderForm nog = new NewOrderForm(args);
             // MessageBox.Show("Расчёт добавлен");

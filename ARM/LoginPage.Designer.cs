@@ -37,19 +37,13 @@
             this.PassTB = new System.Windows.Forms.TextBox();
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.adminEntrance = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.GuestEntrance = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.warningLabel = new System.Windows.Forms.Label();
             this.tc1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tc1
             // 
             this.tc1.Controls.Add(this.tabPage1);
-            this.tc1.Controls.Add(this.tabPage2);
             this.tc1.Location = new System.Drawing.Point(-5, -2);
             this.tc1.Name = "tc1";
             this.tc1.SelectedIndex = 0;
@@ -69,7 +63,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(281, 179);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Вход от имени администратора";
+            this.tabPage1.Text = "Авторизация мастера";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // reg_ll
@@ -127,47 +121,6 @@
             this.adminEntrance.UseVisualStyleBackColor = true;
             this.adminEntrance.Click += new System.EventHandler(this.adminEntrance_Click);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.GuestEntrance);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.warningLabel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(281, 179);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Гостевой доступ";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // GuestEntrance
-            // 
-            this.GuestEntrance.Location = new System.Drawing.Point(57, 94);
-            this.GuestEntrance.Name = "GuestEntrance";
-            this.GuestEntrance.Size = new System.Drawing.Size(146, 48);
-            this.GuestEntrance.TabIndex = 2;
-            this.GuestEntrance.Text = "Вход";
-            this.GuestEntrance.UseVisualStyleBackColor = true;
-            this.GuestEntrance.Click += new System.EventHandler(this.GuestEntrance_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = " просмотр таблиц!";
-            // 
-            // warningLabel
-            // 
-            this.warningLabel.AutoSize = true;
-            this.warningLabel.Location = new System.Drawing.Point(3, 3);
-            this.warningLabel.Name = "warningLabel";
-            this.warningLabel.Size = new System.Drawing.Size(254, 13);
-            this.warningLabel.TabIndex = 0;
-            this.warningLabel.Text = "Внимание, в гостевом режиме доступен только ";
-            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,11 +137,10 @@
             this.Text = "АРМ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginPage_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginPage_FormClosed);
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.tc1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -197,15 +149,11 @@
 
         private System.Windows.Forms.TabControl tc1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.TextBox PassTB;
         private System.Windows.Forms.TextBox LoginTB;
         private System.Windows.Forms.Button adminEntrance;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label warningLabel;
-        private System.Windows.Forms.Button GuestEntrance;
         private System.Windows.Forms.LinkLabel reg_ll;
     }
 }

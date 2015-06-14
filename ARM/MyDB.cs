@@ -20,9 +20,9 @@ namespace ARM
        {
           
        }
-        SqlConnection MyConnection = new SqlConnection("Data Source=Doka;Initial Catalog=ARM;Integrated Security=True;" +
-                                                          "Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
-      //  SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ARM.mdf;Integrated Security=True;Connect Timeout=30");
+       SqlConnection MyConnection = new SqlConnection("Data Source=Doka;Initial Catalog=ARM;Integrated Security=True;" +
+                                                        "Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+      //SqlConnection MyConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ARM.mdf;Integrated Security=True;Connect Timeout=30");
 
 
 
@@ -55,7 +55,7 @@ namespace ARM
                string sql = " insert into dbo.Users (Login, Password) values ('"+a+"','"+b+"')";
                da.InsertCommand= new SqlCommand(sql, MyConnection);
                da.InsertCommand.ExecuteNonQuery();
-               MessageBox.Show("Новый администратор успешно зарегистрирован");
+               MessageBox.Show("Новый пользователь успешно зарегистрирован");
                MyConnection.Close();
                return true;
 
@@ -80,6 +80,28 @@ namespace ARM
            MyConnection.Close();
            return ds;
 
+       }
+       public void fire_worker (string s)
+       {
+           MyConnection.Open();
+           string sql = " delete from dbo.Персонал where ([Ф.И.О. Работника]= '" + s + "')";
+           da.InsertCommand = new SqlCommand(sql, MyConnection);
+           da.InsertCommand.ExecuteNonQuery();
+           MessageBox.Show("Работник уволен");
+           MyConnection.Close();
+ 
+       }
+
+
+        public void hire_worker (string s)
+       {
+           MyConnection.Open();
+           string sql = "       INSERT INTO [dbo].[Персонал]  ([Ф.И.О. Работника],[Разряд],[Стаж],[Адрес],[Телефон],[Образование],[Примечание])  VALUES ('"+s+"')";
+           da.InsertCommand = new SqlCommand(sql, MyConnection);
+           da.InsertCommand.ExecuteNonQuery();
+           MessageBox.Show("Работник нанят");
+           MyConnection.Close();
+ 
        }
 
 
@@ -205,13 +227,13 @@ namespace ARM
               switch (s)
                {
                case "Все заказы":
-                       da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы]", MyConnection);
+                       da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество],[Примечание],[Ответственный] From [dbo].[Заказы]", MyConnection);
                    break;
                case "Выполненные заказы":
-                   da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 1)", MyConnection);
+                   da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество],[Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 1)", MyConnection);
                    break;
                case "Заказы в производстве":
-                   da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество][Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 0)", MyConnection);
+                   da = new SqlDataAdapter("Select [№ п/п],[Наименование],[Материал],[Размеры изделия],[Площадь заготовки],[Количество],[Примечание],[Ответственный] From [dbo].[Заказы] Where ([Статус] = 0)", MyConnection);
                    break;
 
            }
@@ -288,7 +310,7 @@ namespace ARM
        }
      
 
-       public void save_to_excel(DataGridView dt)
+       public void save_to_excel(DataGridView dt,string s)
        {
            Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
            ExcelApp.Application.Workbooks.Add(Type.Missing);
@@ -297,17 +319,56 @@ namespace ARM
            for (int i = 1; i <= dt.Columns.Count; i++ )
                ExcelApp.Cells[1, i] = dt.Columns[i-1].HeaderText;
 
-
+    if (s=="orders")
            for (int i = 0; i < dt.ColumnCount; i++)
            {
-               for (int j = 0; j < dt.RowCount; j++)
+               if (i == 4)//cтолбик Площадь
                {
-                   ExcelApp.Cells[j + 2, i + 1] = (dt[i, j].Value).ToString();
+                 for (int j = 0; j < dt.RowCount; j++)
+                     {
+                   ExcelApp.Cells[j + 2, i + 1] = Convert.ToDouble(dt[i, j].Value);
+                     }
                }
+                  else
+                   for (int j = 0; j < dt.RowCount; j++)
+                      {
+                           ExcelApp.Cells[j + 2, i + 1] = (dt[i, j].Value).ToString();
+                      }
            }
+    else
+    {
+        for (int i = 0; i < dt.ColumnCount; i++)
+        {
+           
+                for (int j = 0; j < dt.RowCount; j++)
+                {
+                    ExcelApp.Cells[j + 2, i + 1] = (dt[i, j].Value).ToString();
+                }
+        }
+    }
            ExcelApp.Visible = true;
        }
 
+       public string first_start()
+       {
+           MyConnection.Open();
+           DataSet ds = new DataSet();
+           da = new SqlDataAdapter("Select [Count] From [dbo].[is_first_start]", MyConnection);
+           da.Fill(ds, "Sessions");
+           string s = ds.Tables[0].Rows[0][0].ToString();
+        
+           MyConnection.Close();
+           return s;
+         
+       }
+       public void no_more()
+       {
+           MyConnection.Open();
+           string sql = " update  [dbo].[is_first_start] set [Count]='0' ";
+           da.InsertCommand = new SqlCommand(sql, MyConnection);
+           da.InsertCommand.ExecuteNonQuery();
+           MyConnection.Close();
+       }
 
     }
 }

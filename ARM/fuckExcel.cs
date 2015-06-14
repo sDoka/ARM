@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
-using Word = Microsoft.Office.Interop.Word;
 
 namespace ARM
 {
@@ -13,9 +12,9 @@ namespace ARM
     {
         public void open_file(string path)
         {
-            Application excel = new Application();
-            Workbook wb = excel.Workbooks.Open(path);
-            excel.Visible = true;
+            Application Excel = new Application();
+            Workbook wb = Excel.Workbooks.Open(path);
+            Excel.Visible = true;
         }
     }
 }

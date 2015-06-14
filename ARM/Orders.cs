@@ -37,6 +37,16 @@ namespace ARM
 
         private void cb1_SelectedIndexChanged(object sender, EventArgs e)//когда выбираем чё ваще хотим
         {
+            dgw1.DataSource = null; 
+            editTB.Visible = false;
+            editBTN.Visible = false;
+            zakazNumberBTN.Visible = false;
+            if (cb1.SelectedItem.ToString() == "Заказы в производстве")
+            {
+                editTB.Visible = true;
+                editBTN.Visible = true;
+                zakazNumberBTN.Visible = true;
+            }
             cb2.Visible = false;
             label2.Visible = false;
             cb2.Items.Clear();
@@ -49,7 +59,7 @@ namespace ARM
                 if (i == 0)
                 {
                     m.form_Heigher(this, 280);
-                    m.form_Wider(this, 750);
+                    m.form_Wider(this, 840);
                     i = 1;
                 }
 
@@ -94,7 +104,7 @@ namespace ARM
 
         private void ToExcelBtn_Click(object sender, EventArgs e)
         {
-            m.save_to_excel(dgw1);
+            m.save_to_excel(dgw1,"orders");
         }
 
         private void editBTN_Click(object sender, EventArgs e)
@@ -103,7 +113,8 @@ namespace ARM
             {
                 string s = editTB.Text.ToString();
                 m.finish_order(s);
-                dgw1.Update();
+                DataTable dt = m.show_orders(s).Tables[0];
+                dgw1.DataSource = dt;
             }
         }
     }

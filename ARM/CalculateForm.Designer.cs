@@ -186,9 +186,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 13);
+            this.label2.Size = new System.Drawing.Size(122, 13);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Наименования заготовки";
+            this.label2.Text = "Наименование заказа";
             // 
             // label3
             // 
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 147);
+            this.ClientSize = new System.Drawing.Size(484, 221);
             this.Controls.Add(this.dgw1);
             this.Controls.Add(this.mat_zag);
             this.Controls.Add(this.name_zag);

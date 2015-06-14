@@ -93,9 +93,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(299, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 13);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Выберите наименование";
+            this.label2.Text = "Выберите заказ";
             // 
             // ToExcelBtn
             // 
@@ -115,6 +115,7 @@
             this.zakazNumberBTN.Size = new System.Drawing.Size(77, 13);
             this.zakazNumberBTN.TabIndex = 24;
             this.zakazNumberBTN.Text = "№ заказа п/п";
+            this.zakazNumberBTN.Visible = false;
             // 
             // editTB
             // 
@@ -122,6 +123,7 @@
             this.editTB.Name = "editTB";
             this.editTB.Size = new System.Drawing.Size(80, 20);
             this.editTB.TabIndex = 23;
+            this.editTB.Visible = false;
             // 
             // editBTN
             // 
@@ -131,6 +133,7 @@
             this.editBTN.TabIndex = 22;
             this.editBTN.Text = "Завершить заказ";
             this.editBTN.UseVisualStyleBackColor = true;
+            this.editBTN.Visible = false;
             this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
             // 
             // Orders
@@ -152,7 +155,7 @@
             this.MinimizeBox = false;
             this.Name = "Orders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Orders";
+            this.Text = "Работа с заказами";
             this.Resize += new System.EventHandler(this.Заказы_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgw1)).EndInit();
             this.ResumeLayout(false);

@@ -14,8 +14,16 @@ namespace ARM
         [STAThread]
         static void Main()
         {
+            MyDB m = new MyDB();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            string s = m.first_start();
+            if (s == "True")
+            {
+                Application.Run(new WelcomeForm());
+
+            }
+            else
             Application.Run(new LoginPage());
         }
     }

@@ -59,9 +59,9 @@
             this.l1.AutoSize = true;
             this.l1.Location = new System.Drawing.Point(22, 13);
             this.l1.Name = "l1";
-            this.l1.Size = new System.Drawing.Size(83, 13);
+            this.l1.Size = new System.Drawing.Size(38, 13);
             this.l1.TabIndex = 0;
-            this.l1.Text = "Наименование";
+            this.l1.Text = "Заказ";
             // 
             // l2
             // 
@@ -285,7 +285,7 @@
             this.MinimizeBox = false;
             this.Name = "NewOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Работа с заказками";
+            this.Text = "Работа с заказами";
             this.gb1.ResumeLayout(false);
             this.gb1.PerformLayout();
             this.ResumeLayout(false);

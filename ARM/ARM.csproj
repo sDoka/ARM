@@ -123,6 +123,12 @@
     <Compile Include="super_admin_check.Designer.cs">
       <DependentUpon>super_admin_check.cs</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkSession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
     <EmbeddedResource Include="super_admin_check.resx">
       <DependentUpon>super_admin_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkSession.resx">
       <DependentUpon>WorkSession.cs</DependentUpon>

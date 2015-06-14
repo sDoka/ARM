@@ -19,6 +19,8 @@ namespace ARM
         {
           
             InitializeComponent();
+           
+           
         }
 
         private void adminEntrance_Click(object sender, EventArgs e)
@@ -65,6 +67,13 @@ namespace ARM
             {
                 Application.ExitThread();
             }
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+
+                
         }
 
 
