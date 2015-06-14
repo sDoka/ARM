@@ -20,9 +20,8 @@ namespace ARM
        {
           
        }
-       SqlConnection MyConnection = new SqlConnection("Data Source=Doka;Initial Catalog=ARM;Integrated Security=True;" +
-                                                        "Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
-      //SqlConnection MyConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ARM.mdf;Integrated Security=True;Connect Timeout=30");
+      // SqlConnection MyConnection = new SqlConnection("Data Source=Doka;Initial Catalog=ARM;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+     SqlConnection MyConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ARM.mdf;Integrated Security=True;Connect Timeout=30");
 
 
 
@@ -370,5 +369,13 @@ namespace ARM
            MyConnection.Close();
        }
 
+       public void once_more()
+       {
+           MyConnection.Open();
+           string sql = " update  [dbo].[is_first_start] set [Count]='1' ";
+           da.InsertCommand = new SqlCommand(sql, MyConnection);
+           da.InsertCommand.ExecuteNonQuery();
+           MyConnection.Close();
+       }
     }
 }

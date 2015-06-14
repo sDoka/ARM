@@ -17,14 +17,25 @@ namespace ARM
             MyDB m = new MyDB();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string s = m.first_start();
-            if (s == "True")
-            {
-                Application.Run(new WelcomeForm());
 
-            }
+               string s = m.first_start();
+              // s = "";
+                if (s == "True")
+                {
+                    Application.Run(new WelcomeForm());
+
+                }
+                else if (s=="False")
+                    Application.Run(new LoginPage());
             else
-            Application.Run(new LoginPage());
+            {
+                if (MessageBox.Show("Установите SQL LocalDB для вашей ОС", "Ошибка", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://www.microsoft.com/ru-ru/download/details.aspx?id=29062");
+                }
+                Application.Exit();
+            }
+
         }
     }
 }

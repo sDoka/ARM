@@ -76,6 +76,20 @@ namespace ARM
                 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            m.once_more();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Установите SQL LocalDB для вашей ОС", "Ошибка", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("https://www.microsoft.com/ru-ru/download/details.aspx?id=29062");
+            }
+        }
+
 
     }
 }
